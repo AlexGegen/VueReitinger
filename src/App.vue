@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!--img alt="Vue logo" src="https://vuejs.org/images/logo.png"-->
-    <!--HelloWorld msg="Good Morning"/-->
     <h1>Good Morning 5AHIT</h1>
+    <!--img alt="Vue logo" src="https://vuejs.org/images/logo.png"-->
+    <HelloWorld msg="Good Morning"/>
   </div>
 </template>
 
