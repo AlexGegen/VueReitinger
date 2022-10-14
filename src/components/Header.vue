@@ -1,0 +1,15 @@
+<template>
+    <h1>HTL Wels / AHIT5</h1>
+    <br />
+    <h2>JavaScript / DOM-Manipulation / Dynamic List</h2>
+</template>
+
+
+<script>
+
+</script>
+
+
+<style>
+
+</style>
