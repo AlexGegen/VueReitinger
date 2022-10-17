@@ -48,7 +48,7 @@
   <ul></ul>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'Main',
 };

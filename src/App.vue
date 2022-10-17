@@ -1,22 +1,25 @@
 <template>
   <div id="app">
     <!--img alt="Vue logo" src="https://vuejs.org/images/logo.png"-->
-    <Header />
+    <Header msg="5AHIT" />
     <Main />
-
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
+import Footer from './components/Footer.vue'
+
 
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main
+    Main,
+    Footer
   }
 }
 </script>
