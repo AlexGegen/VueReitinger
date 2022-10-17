@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <h1>Good Morning 5AHIT</h1>
     <!--img alt="Vue logo" src="https://vuejs.org/images/logo.png"-->
-    <HelloWorld msg="Good Morning"/>
+    <Header />
+    <Main />
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Main
   }
 }
 </script>
