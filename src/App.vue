@@ -1,36 +1,73 @@
 <template>
   <div id="app">
-    <!--img alt="Vue logo" src="https://vuejs.org/images/logo.png"-->
-    <Header msg="5AHIT" />
-    <Main />
-    <Footer />
+    <h3>Example</h3>
+    <hr />
+    <form @submit.prevent="addSubject" class="inputForm">
+      <label for="">Enter new subject: </label>
+      <input v-model="newSubject" type="text" />
+      <button>Add subject</button>
+    </form>
+    <hr />
+    <ul>
+      <li v-for="(subject, index) in allSubjects">
+        {{ subject.content }}
+        <button @click="removeSubject(index)">Delete</button>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Main from './components/Main.vue'
-import Footer from './components/Footer.vue'
-
-
+import { ref } from 'vue';
 
 export default {
-  name: 'App',
-  components: {
-    Header,
-    Main,
-    Footer
-  }
-}
+  setup() {
+    const newSubject = ref('Mittwoch');
+    const allSubjects = ref([]);
+
+    function addSubject() {
+      allSubjects.value.push({
+        content: newSubject.value,
+      });
+      newSubject.value = '';
+      console.log(allSubjects.value);
+    }
+
+    function removeSubject(index) {
+      console.log('remove' + index);
+      allSubjects.value.splice(index, 1);
+    }
+
+    return {
+      newSubject,
+      addSubject,
+      allSubjects,
+      removeSubject,
+    };
+  },
+};
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.inputForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li button {
+  margin-left: 35px;
 }
 </style>
